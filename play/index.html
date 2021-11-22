@@ -3,12 +3,12 @@ layout: main
 title: great Adventure
 ---
 <script>
-  const scene = new THREE.Scene()
-  const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
-  const renderer = new THREE.WebGLRenderer()
-  const geometry = new THREE.BoxGeometry()
-  const plantWorldMaterial = new THREE.MeshBasicMaterial({color: 0x00ff00})
-  const plantWorld = new THREE.Mesh(geometry, plantWorldMaterial)
+  var scene = new THREE.Scene()
+  var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
+  var renderer = new THREE.WebGLRenderer()
+  var geometry = new THREE.BoxGeometry()
+  var plantWorldMaterial = new THREE.MeshBasicMaterial({color: 0x00ff00})
+  var plantWorld = new THREE.Mesh(geometry, plantWorldMaterial)
   scene.add(cube)
   camera.position.z = 5
   renderer.setSize(window.innerWidth, window.innerHeight)
