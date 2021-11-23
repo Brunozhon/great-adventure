@@ -1,9 +1,8 @@
 ---
 layout: main
-title: great Adventure
+title: Great Adventure
 ---
-<div id="plantWorld">
-</div>
+<h2>The worlds</h2>
 <script>
   //function() { // Use this function to debug. GitHub syntax highights variable that have been declared. Then you can find your bugs :)
   var scene = new THREE.Scene()
@@ -11,16 +10,22 @@ title: great Adventure
   var renderer = new THREE.WebGLRenderer()
   var geometry = new THREE.BoxGeometry()
   var plantWorldMaterial = new THREE.MeshBasicMaterial({color: 0x00ff00})
+  var oceanWorldMaterial = new THREE.MeshBasicMaterial({color: 0x00ffff})
   var plantWorld = new THREE.Mesh(geometry, plantWorldMaterial)
+  var oceanWorld = new THREE.Mesh(geometry, oceanWorldMaterial)
   scene.add(plantWorld)
+  scene.add(oceanWorld)
+  oceanWorld.position.x = 15
   camera.position.z = 5
   renderer.setSize(window.innerWidth, window.innerHeight)
-  document.getElementById("plantWorld").appendChild(renderer.domElement)
+  document.body.appendChild(renderer.domElement)
   function animate() {
     requestAnimationFrame(animate)
     renderer.render(scene, camera)
     plantWorld.rotation.x += 0.01
     plantWorld.rotation.y += 0.01
+    oceanWorld.rotation.x += 0.01
+    oceanWorld.rotation.y += 0.01
   }
   animate()
   //}
